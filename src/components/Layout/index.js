@@ -1,7 +1,7 @@
 import React, { Fragment } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import Profile from "./Profile"
+import Profile from "../Profile"
 
 const Layout = ({ children }) => {
   return (
