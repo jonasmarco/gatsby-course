@@ -3,7 +3,7 @@ date: 2021-01-01 00:00:00
 title: Happy New Year
 description: Welcome 2021
 category: MISC
-backgroud: "#000333"
+background: "#000333"
 ---
 
 ## Happy New Year - ABBA
