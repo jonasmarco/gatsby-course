@@ -10,7 +10,7 @@ const Avatar = () => {
         avatarImage: file(relativePath: { eq: "profile.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 60, maxHeight: 60) {
-              ...GatsbyImageSharpFluid_tracedSVG
+              ...GatsbyImageSharpFluid
             }
           }
         }

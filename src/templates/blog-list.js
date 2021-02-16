@@ -24,8 +24,9 @@ const BlogList = props => {
                          timeToRead,
                          fields: {slug},
                      },
-                 }) => (
+                 }, index) => (
                     <PostItem
+                        key={index}
                         slug={slug}
                         background={background}
                         category={category}
