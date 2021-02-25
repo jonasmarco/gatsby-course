@@ -6,6 +6,8 @@ import SEO from "../components/seo"
 import PostItem from "../components/PostItem"
 import Pagination from "../components/Pagination";
 
+import * as S from "../components/GridWrapper/styled";
+
 const BlogList = props => {
     const postList = props.data.allMarkdownRemark.edges
     const {currentPage, numPages} = props.pageContext
@@ -17,26 +19,28 @@ const BlogList = props => {
     return (
         <Layout>
             <SEO title="Home"/>
-            {postList.map(
-                ({
-                     node: {
-                         frontmatter: {background, category, date, description, title},
-                         timeToRead,
-                         fields: {slug},
-                     },
-                 }, index) => (
-                    <PostItem
-                        key={index}
-                        slug={slug}
-                        background={background}
-                        category={category}
-                        date={date}
-                        timeToRead={timeToRead}
-                        title={title}
-                        description={description}
-                    />
-                )
-            )}
+            <S.GridWrapper>
+              {postList.map(
+                  ({
+                      node: {
+                          frontmatter: {background, category, date, description, title},
+                          timeToRead,
+                          fields: {slug},
+                      },
+                  }, index) => (
+                      <PostItem
+                          key={index}
+                          slug={slug}
+                          background={background}
+                          category={category}
+                          date={date}
+                          timeToRead={timeToRead}
+                          title={title}
+                          description={description}
+                      />
+                  )
+              )}
+            </S.GridWrapper>
             <Pagination
                 isFirst={isFirst}
                 isLast={isLast}
