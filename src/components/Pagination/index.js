@@ -1,27 +1,46 @@
-import React from 'react'
-import PropTypes from 'prop-types';
-import {Link} from 'gatsby'
+import React from "react"
+import PropTypes from "prop-types"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
-import {ArrowLeft} from '@styled-icons/evaicons-solid/ArrowLeft'
-import {ArrowRight} from '@styled-icons/evaicons-solid/ArrowRight'
+import { ArrowLeft } from "@styled-icons/evaicons-solid/ArrowLeft"
+import { ArrowRight } from "@styled-icons/evaicons-solid/ArrowRight"
 
-import * as S from './styled'
+import getThemeColor from '../../utils/getThemeColor'
 
-const Pagination = ({isFirst, isLast, currentPage, numPages, prevPage, nextPage}) => (
-    <S.PaginationWrapper>
-        {!isFirst && <Link to={prevPage}><ArrowLeft width={20}/> página anterior</Link>}
-        <p>{currentPage} de {numPages}</p>
-        {!isLast && <Link to={nextPage}>próxima página <ArrowRight width={20}/></Link>}
-    </S.PaginationWrapper>
+import * as S from "./styled"
+
+const Pagination = ({
+  isFirst,
+  isLast,
+  currentPage,
+  numPages,
+  prevPage,
+  nextPage,
+}) => (
+  <S.PaginationWrapper>
+    {!isFirst && (
+      <AniLink paintDrip duration={0.5} hex={getThemeColor()} to={prevPage}>
+        <ArrowLeft width={20} /> página anterior
+      </AniLink>
+    )}
+    <p>
+      {currentPage} de {numPages}
+    </p>
+    {!isLast && (
+      <AniLink paintDrip duration={0.5} hex={getThemeColor()} to={nextPage}>
+        próxima página <ArrowRight width={20} />
+      </AniLink>
+    )}
+  </S.PaginationWrapper>
 )
 
 Pagination.propTypes = {
-    isFirst: PropTypes.bool.isRequired,
-    isLast: PropTypes.bool.isRequired,
-    currentPage: PropTypes.number.isRequired,
-    numPages: PropTypes.number.isRequired,
-    prevPage: PropTypes.string,
-    nextPage: PropTypes.string,
+  isFirst: PropTypes.bool.isRequired,
+  isLast: PropTypes.bool.isRequired,
+  currentPage: PropTypes.number.isRequired,
+  numPages: PropTypes.number.isRequired,
+  prevPage: PropTypes.string,
+  nextPage: PropTypes.string,
 }
 
 export default Pagination

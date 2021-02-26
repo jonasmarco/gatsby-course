@@ -35,6 +35,12 @@ module.exports = {
             },
         },
         {
+            resolve: 'gatsby-plugin-transition-link',
+            options: {
+                injectPageProps: false,
+            },
+        },
+        {
             resolve: `gatsby-transformer-remark`,
             options: {
                 plugins: [
