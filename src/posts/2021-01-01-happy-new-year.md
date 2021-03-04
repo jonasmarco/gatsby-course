@@ -4,6 +4,7 @@ title: Happy New Year
 description: Welcome 2021
 category: MISC
 background: "#000333"
+image: "/assets/img/desert.jpg"
 ---
 
 ## Happy New Year - ABBA

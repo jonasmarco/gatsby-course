@@ -18,7 +18,10 @@ const BlogList = props => {
 
     return (
         <Layout>
-            <SEO title="Home"/>
+            <SEO
+                title="Home"
+                description="Últimas notícias do blog"
+            />
             <S.GridWrapper>
               {postList.map(
                   ({
