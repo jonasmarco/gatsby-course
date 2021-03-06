@@ -8,7 +8,7 @@ module.exports = {
         position: `Programador Full Stack`,
         description: `A blog made with GatsbyJS.`,
         author: `@jonasmarco`,
-        siteUrl: `https://johndoe.com.br`,
+        siteUrl: `https://gatsby-blog-jonas.netlify.app/`,
     },
     plugins: [
         `gatsby-plugin-styled-components`,
@@ -103,5 +103,6 @@ module.exports = {
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline
         `gatsby-plugin-offline`,
+        `gatsby-plugin-netlify-cms`
     ],
 }
