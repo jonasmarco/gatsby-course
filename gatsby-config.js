@@ -58,8 +58,19 @@ module.exports = {
                             linkImagesToOriginal: false
                         }
                     },
+                    {
+                        resolve: `gatsby-remark-prismjs`,
+                        options: {
+                            aliases: {
+                                sh: "shell",
+                                es6: "javascript",
+                                env: "bash",
+                                mdx: "md",
+                                ".json": "json",
+                            },
+                        },
+                    },
                     `gatsby-remark-lazy-load`,
-                    `gatsby-remark-prismjs`
                 ],
             },
         },
